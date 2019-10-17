@@ -1,10 +1,10 @@
+<pre>
 <?php
-    
-    session_start();
-    include_once('../teste.php');
+    include_once('../vendor/autoload.php');
 
-    if(!isset($_SESSION['usuario'])){
-        header('location: login.php');
-        exit();
-    }
+    
+
+    $secao = new ValidaUsuario();
+    $secao->validar('admin');
+    $secao->validaSecao();
 ?>

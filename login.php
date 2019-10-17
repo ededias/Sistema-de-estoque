@@ -4,7 +4,7 @@
     </head>
     <body>
         
-        <form action="teste.php" method="post" >
+        <form action="enviarParametrosClasses.php" method="post" >
             login:
             <input type="text" name="usuario">
             senha:

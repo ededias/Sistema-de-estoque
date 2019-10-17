@@ -1,9 +1,20 @@
-<?php include_once('login/validasecao.php'); ?>
+<?php
+    include_once('vendor/autoload.php');
+    $secao = new ValidaUsuario();
+
+    session_start();
+            
+    if(!isset($_SESSION['usuario'])){
+        header('location: login.php');
+        exit();
+    }
+
+?>
 <html>
     <head>      
     </head>
     <body>
-        <form>
+        <form >
             <?php echo $_SESSION['usuario']; ?>
             Código produto:
             <input type="text" name="codProd" placeholder="00">
@@ -15,7 +26,7 @@
             <input type="date" name="dataCad">
             
         </form>
-        <a href="cadastro.php">Cadastro Usuario</a>
+        <a href="cadastroUsuario.php">Cadastro Usuario</a>
         <button><a href="login/sair.php">Sair</a></button>
     </body>
 </html>

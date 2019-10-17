@@ -17,7 +17,8 @@
             $stmt->bindValue(8, $p->getSexo());
             
             $stmt->execute();
-            
+            echo ("Produto cadastrado com sucesso");
+            header('location: cadastroUsuario.php');
         }
 
         public function listarUsuario(){
