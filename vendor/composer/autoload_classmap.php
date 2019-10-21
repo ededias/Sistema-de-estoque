@@ -6,8 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ConsultaProd' => $baseDir . '/App/ControleProdutos/cadProd.class.php',
     'ConsultaUsuario' => $baseDir . '/App/ControleUsuarios/cadUsuario.class.php',
+    'Controle' => $baseDir . '/App/ControleUsuarios/controleParamUsuarios.class.php',
     'Db' => $baseDir . '/App/Db/db.class.php',
+    'Produto' => $baseDir . '/App/ControleProdutos/produto.php',
     'Usuario' => $baseDir . '/App/ControleUsuarios/login.class.php',
     'ValidaUsuario' => $baseDir . '/App/ControleUsuarios/validaUsuario.class.php',
 );

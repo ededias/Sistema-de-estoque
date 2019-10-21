@@ -7,8 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInit507b97caaefe411c73c82c17414329d2
 {
     public static $classMap = array (
+        'ConsultaProd' => __DIR__ . '/../..' . '/App/ControleProdutos/cadProd.class.php',
         'ConsultaUsuario' => __DIR__ . '/../..' . '/App/ControleUsuarios/cadUsuario.class.php',
+        'Controle' => __DIR__ . '/../..' . '/App/ControleUsuarios/controleParamUsuarios.class.php',
         'Db' => __DIR__ . '/../..' . '/App/Db/db.class.php',
+        'Produto' => __DIR__ . '/../..' . '/App/ControleProdutos/produto.php',
         'Usuario' => __DIR__ . '/../..' . '/App/ControleUsuarios/login.class.php',
         'ValidaUsuario' => __DIR__ . '/../..' . '/App/ControleUsuarios/validaUsuario.class.php',
     );

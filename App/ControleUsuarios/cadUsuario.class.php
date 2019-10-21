@@ -27,6 +27,11 @@
 
            $stmt->execute();
 
+           if($stmt->rowCount() > 0):
+               $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+               return $resultado;
+           endif;
+
         }
         function atualizarUsuario(){
             $sql = "UPDATE usuario SET nome = ?, idade = ?, tipoUsuario = ?, loginUsuario = ?, CPF = ?, funcao = ?, sexo =? WHERE idUsuario = ?";

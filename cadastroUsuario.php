@@ -35,6 +35,7 @@
             <input type="submit">
         </form>
         <a href="index.php">Voltar a Página inicial</a>
+        <a href="visualizarUsuarios.php">Consulta de usuarios</a>
        
     </body>
 </html>
