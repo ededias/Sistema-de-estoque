@@ -1,31 +1,28 @@
 <?php
- 
-    
+
     Class ValidaUsuario {
            
-        public function validar(Usuario $validacao) {
+        public function validar(Usuario $a) {
   
-            $sql = "SELECT loginUsuario, senhaUsuario FROM usuario WHERE loginUsuario = ? and senhaUsuario = md5(?)";
+            $sql = "SELECT * FROM usuario WHERE loginUsuario = ? and senhaUsuario = ?";
             
             $stmt = Db::ConexaoDb()->prepare($sql);
-            $stmt->bindValue(1, $validacao->getLogin());
-            $stmt->bindValue(2, $validacao->getSenha());
-          
+            // $stmt->bindValue(1, $validacao->getId());
+            $stmt->bindValue(1, $a->getLogin());
+            $stmt->bindValue(2, $a->getSenha());
             $stmt->execute();
-            $linhas = $stmt->rowCount();
-           
-            if($linhas == 1) {
-                session_start();
-                $_SESSION['usuario'] = $validacao->getLogin();
-                header('location: index.php');
-            } else {
-                header('location: login.php');
-            }
-        } 
 
-        public function validaSecao() {
-           
-           
-        }
+            $usuario = $stmt->fetch(\PDO::FETCH_ASSOC);
+            if($usuario['loginUsuario'] != '' && $usuario['senhaUsuario'] != ''):
+                session_start();
+                $_SESSION = $usuario;
+                header('location: index.php');
+            elseif($usuario['loginUsuario'] == '' && $usuario['senhaUsuario'] == ''):
+                echo 'campos invalidos';
+                header('location: login.php');
+            endif;
+                
+        } 
+       
     }
    

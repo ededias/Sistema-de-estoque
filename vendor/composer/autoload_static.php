@@ -14,6 +14,8 @@ class ComposerStaticInit507b97caaefe411c73c82c17414329d2
         'Produto' => __DIR__ . '/../..' . '/App/ControleProdutos/produto.php',
         'Usuario' => __DIR__ . '/../..' . '/App/ControleUsuarios/login.class.php',
         'ValidaUsuario' => __DIR__ . '/../..' . '/App/ControleUsuarios/validaUsuario.class.php',
+        'VisualizacaoProd' => __DIR__ . '/../..' . '/App/View/listarProdutos.php',
+        'Vizualizacao' => __DIR__ . '/../..' . '/App/View/listarUsuarios.view.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

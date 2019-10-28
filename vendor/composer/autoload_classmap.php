@@ -13,4 +13,6 @@ return array(
     'Produto' => $baseDir . '/App/ControleProdutos/produto.php',
     'Usuario' => $baseDir . '/App/ControleUsuarios/login.class.php',
     'ValidaUsuario' => $baseDir . '/App/ControleUsuarios/validaUsuario.class.php',
+    'VisualizacaoProd' => $baseDir . '/App/View/listarProdutos.php',
+    'Vizualizacao' => $baseDir . '/App/View/listarUsuarios.view.php',
 );

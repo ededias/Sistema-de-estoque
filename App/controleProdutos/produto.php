@@ -2,13 +2,13 @@
 
     Class Produto {
 
-        private $produto, $tipoProd, $descProd, $IPI, $COFINS, $vlImpostos, $vcImpostos, $quantidade;
+        private $nomeProduto, $tipoProd, $descProd, $IPI, $COFINS, $vlImpostos, $vcImpostos, $quantidade, $id;
 
         public function getNomeProd(){
-            return $this->produto;
+            return $this->nomeProduto;
         }
-        public function setNomeProd($produto){
-            $this->produto = $produto;
+        public function setNomeProd($nomeProduto){
+            $this->nomeProduto = $nomeProduto;
         }
         public function getTipoProd(){
             return $this->tipoProd;
@@ -26,9 +26,16 @@
         public function getIPI(){
             return $this->IPI;
         }
+        public function setIPI($IPI){
+           $this->IPI = $IPI;
+        }
+        public function getCOFINS(){
+            return $this->COFINS;
+        }
         public function setCOFINS($COFINS){
             $this->COFINS = $COFINS;
         }
+        
         public function getVlImpostos(){
             return $this->vlImpostos;
         }
@@ -46,6 +53,12 @@
         }
         public function setQtdProd($quantidade){
             $this->quantidade =  $quantidade;
+        }
+        public function getId(){
+            return $this->id;
+        }
+        public function setId($id){
+            $this->id =  $id;
         }
         
     }

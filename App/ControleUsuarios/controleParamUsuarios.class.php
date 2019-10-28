@@ -1,12 +1,17 @@
 <?php
-
+    
+    $nome = $_POST['nome'];
+    $CPF = $_POST['CPF'];
+    $funcao = $_POST['funcao'];
+    $tipoUsuario = $_POST['tipoUsuario'];
+    $idade = $_POST['idade'];
+    $sexo = $_POST['sexo'];
+    
     Class Controle {
 
-        public function controleLogin() {
+        public function controleLogin($login, $senha) {
             $usuario->setLogin($login);
             $usuario->setSenha($senha);
-            
-            $validar = new ValidaUsuario();
             
             $validar-> validar($usuario);
         }
@@ -28,9 +33,24 @@
             $usuario->setIdade($idade);
             $usuario->setSexo($sexo);
 
-            $cadUsuario = new ConsultaUsuario();
+            
             $cadUsuario->cadUsuario($usuario);
     
+        }
+
+        public function atualizar() {
+
+            $usuario->setLogin($login);
+            $usuario->setSenha($senha);
+            $usuario->setNome($nome);
+            $usuario->setCpf($CPF);
+            $usuario->setFuncao($funcao);
+            $usuario->setTipoUsuario($tipoUsuario);
+            $usuario->setIdade($idade);
+            $usuario->setSexo($sexo);
+
+            
+            $cadUsuario->cadUsuario($usuario);
         }
 
     }

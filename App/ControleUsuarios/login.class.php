@@ -5,10 +5,10 @@
         private $nome;
         
         public function getNome(){
-            return $this-> nome;
+            return $this->nome;
         }
         public function setNome($nome){
-            $this-> nome = $nome;
+            $this->nome = $nome;
         }
         public function getIdade(){
             return $this-> idade;
@@ -24,19 +24,19 @@
             $this->tipoUsuario = $tipoUsuario;
         }
         public function getLogin(){
-            return $this-> loginUsuario;
+            return $this->loginUsuario;
         }
         public function setLogin($loginUsuario){
             $this->loginUsuario = $loginUsuario;
         }
         public function getSenha(){
-            return $this-> senhaUsuario;
+            return $this->senhaUsuario;
         }
         public function setSenha($senhaUsuario){
-            $this-> senhaUsuario = $senhaUsuario;
+            $this->senhaUsuario = $senhaUsuario;
         }
         public function getCpf(){
-            return $this-> CPF;
+            return $this->CPF;
         }
         public function setCpf( $CPF){
             $this-> CPF =  $CPF;
@@ -49,18 +49,18 @@
         }
        
         public function getSexo(){
-            return $this-> sexo;
+            return $this->sexo;
         }
         public function setSexo($sexo ){
             $this->sexo = $sexo;
         }
         
         public function getId(){
-            return $this-> idUsuario;
+            return $this->idusuario;
         }
         
-        public function setId($idUsuario){
-            $this-> idUsuario = $idUsuario;
+        public function setId($idusuario){
+            $this->idusuario = $idusuario;
         }
 
         

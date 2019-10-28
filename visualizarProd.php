@@ -1,9 +1,9 @@
 <?php  
     require_once('vendor/autoload.php');
-    $usuario = new Usuario();
-    $consultaAtualiza = new ConsultaUsuario();
-    $consulta = $consultaAtualiza->listarUsuario();
-    $vizualizar = new Vizualizacao();   
+    $listarProd = new ConsultaProd();
+    $listaProduto = $listarProd->listarProduto();
+    $visualizar = new VisualizacaoProd();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,7 +20,7 @@
   </head>
   <body>
     <h1>Vizualizar usuarios</h1>
-    <?php $vizualizar->tabela($consulta); ?>
+    <?php $visualizar->tabelaProd($listaProduto); ?>
     <!-- Botão para acionar modal -->
     <a href="index.php">retornar a ao cadastro</a>
     <!-- Modal -->

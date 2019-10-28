@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\App"
+    "\\App",
+    "\\App\\ControleUsuarios"
   ],
-  "SelectedNode": "\\App\\ControleUsuarios",
+  "SelectedNode": "\\App\\ControleUsuarios\\cadUsuario.class.php",
   "PreviewInSolutionExplorer": false
 }

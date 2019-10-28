@@ -17,42 +17,47 @@
             $stmt->bindValue(8, $p->getSexo());
             
             $stmt->execute();
-            echo ("Produto cadastrado com sucesso");
             header('location: cadastroUsuario.php');
         }
 
         public function listarUsuario(){
-           $sql = "SELECT * FROM usuario";
-           $stmt = Db::ConexaoDb()->prepare($sql);
+            $sql = "SELECT nome, idade, tipoUsuario, loginUsuario, senhaUsuario, CPF, funcao, sexo, idusuario FROM usuario";
+            $stmt = Db::ConexaoDb()->prepare($sql);
+            // $stmt->bindValue(1, $p->getId());
+            $stmt->execute();
 
-           $stmt->execute();
-
-           if($stmt->rowCount() > 0):
-               $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-               return $resultado;
-           endif;
+            if($stmt->rowCount() > 0):
+                $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                return $resultado;
+            endif;
 
         }
-        function atualizarUsuario(){
-            $sql = "UPDATE usuario SET nome = ?, idade = ?, tipoUsuario = ?, loginUsuario = ?, CPF = ?, funcao = ?, sexo =? WHERE idUsuario = ?";
+
+        function atualizarUsuario(Usuario $p){
+            $sql = 'UPDATE usuario SET nome = ?, idade = ?, tipoUsuario = ?, loginUsuario = ?, senhaUsuario = ?, CPF = ?, funcao = ?, sexo = ? WHERE idusuario = ? ';
 
             $stmt = Db::ConexaoDb()->prepare($sql);
             $stmt->bindValue(1, $p->getNome());
-            $stmt->bindValue(2, $p->getIdade());
-            $stmt->bindValue(3, $p->getTipoUsuario());
+            $stmt->bindValue(2, $p->getIdade()); 
             $stmt->bindValue(4, $p->getLogin());
+            $stmt->bindValue(3, $p->getTipoUsuario());
             $stmt->bindValue(5, $p->getSenha());
             $stmt->bindValue(6, $p->getCpf());
             $stmt->bindValue(7, $p->getFuncao());
-            $stmt->bindValue(1, $p->getSexo());
-            $stmt->bindValue(1, $p->getId());
+            $stmt->bindValue(8, $p->getSexo());
+            $stmt->bindValue(9, $p->getId());
+
             $stmt->execute();
+            //header('location: visualizarUsuarios.php');
         }
+
         function excluirUsuario($id){
-            $sql = "DELETE FROM usuario where idUsuario = ?";
+            $sql = "DELETE FROM usuario where idusuario = ?";
 
             $stmt = Db::ConexaoDb()->prepare($sql);
-            $stmt->bindValue(1, getId());
+            $stmt->bindValue(1, $id->getId());
+            $stmt->execute();
+            header('location: visualizarUsuarios.php');
         }
 
     }

@@ -1,13 +1,5 @@
 <?php 
-    include_once('vendor/autoload.php');
-    $secao = new ValidaUsuario();
-
-    session_start();
-            
-    if(!isset($_SESSION['usuario'])){
-        header('location: login.php');
-        exit();
-    }
+    
 
 ?> 
 <html>

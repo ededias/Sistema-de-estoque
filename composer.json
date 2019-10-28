@@ -1,5 +1,5 @@
 {
     "autoload": {
-        "classmap": ["App/ControleUsuarios", "App/ControleProdutos", "App/Db"]
+        "classmap": ["App/ControleUsuarios", "App/ControleProdutos", "App/View", "App/Db"]
     }
 }
