@@ -15,11 +15,14 @@
                     <td><?php echo $a['nomeProduto'] ?></td> 
                     <td><?php echo $a['descricaoProduto'] ?></td>
                     <td><?php echo $a['tipoProduto'] ?> </td>
-                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">Editar</button></td>
+                    <td id="modalEditar">
+                        <button type="button" class="btn btn-primary" value="<?php echo $a['idproduto']?>">Editar</button>   
+                    </td>
                     <td>
-                        <form method="post" action="excluir.php">
-                            <input type="hidden" name="idusuario" value="<?php echo $a['idusuario']?>">
-                            <button type="submit" class="btn btn-danger" onclick="excluir()">Excluir</button>
+                        <form method="post" action="excluirProd.php">
+                            <input type="hidden" name="produto" value="<?php echo $a['idproduto']?>">
+                            <input type="hidden" name="idusuario" value="<?php echo $_SESSION['idusuario']; ?>">
+                            <button type="submit" class="btn btn-danger">Excluir</button>
                         </form>
                     </td>
                 </tr>
@@ -29,11 +32,6 @@
         <?php 
             
         } 
-        function Secao() {
-            
-        }
+    } ?>
+
         
-    }
-
-?> 
-

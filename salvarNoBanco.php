@@ -10,7 +10,7 @@
     $produto->setIpi($_POST['IPI']);
     $produto->setCOFINS($_POST['COFINS']);
     $produto->setQtdProd($_POST['quantidade']);
-    $produto->setId($id);
+    $produto->setUsuarioId($id);
     $consultaProd = new ConsultaProd();
 
     $consultaProd->cadProd($produto);

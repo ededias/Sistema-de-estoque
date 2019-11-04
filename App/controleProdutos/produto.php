@@ -2,7 +2,7 @@
 
     Class Produto {
 
-        private $nomeProduto, $tipoProd, $descProd, $IPI, $COFINS, $vlImpostos, $vcImpostos, $quantidade, $id;
+        private $nomeProduto, $tipoProd, $descProd, $IPI, $COFINS, $vlImpostos, $vcImpostos, $quantidade, $id, $idUsuario;
 
         public function getNomeProd(){
             return $this->nomeProduto;
@@ -54,12 +54,19 @@
         public function setQtdProd($quantidade){
             $this->quantidade =  $quantidade;
         }
-        public function getId(){
+        public function getProdId(){
             return $this->id;
         }
-        public function setId($id){
+        public function setProdId($id){
             $this->id =  $id;
         }
+        public function getUsuarioId(){
+            return $this->idUsuario;
+        }
+        public function setUsuarioId($idUsuario){
+            $this->idUsuario =  $idUsuario;
+        }
+        
         
     }
     

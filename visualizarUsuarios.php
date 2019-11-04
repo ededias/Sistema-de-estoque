@@ -70,7 +70,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label class="input">id</label>
-                        <input type="text" name="id" class="form-control">
+                        <input type="text" name="id" id="teste" value="<?php  $a['idproduto'] ?>" class="form-control">
                     </div>
                     
                 </div>
@@ -91,9 +91,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script>
-        function excluir() {
-           alert('tem certeza?')
-        }
+        var teste;
+        teste = document.getElementByid('teste');
+        alert(teste);
     </script>
   </body>
 </html>

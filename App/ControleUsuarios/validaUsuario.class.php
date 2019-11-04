@@ -18,7 +18,6 @@
                 $_SESSION = $usuario;
                 header('location: index.php');
             elseif($usuario['loginUsuario'] == '' && $usuario['senhaUsuario'] == ''):
-                echo 'campos invalidos';
                 header('location: login.php');
             endif;
                 

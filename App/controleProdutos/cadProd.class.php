@@ -14,14 +14,15 @@
             $stmt->bindValue(5, $p->getCOFINS());
             // $stmt->bindValue(6, $p->getVlImpostos());
             $stmt->bindValue(6, $p->getQtdProd());
-            $stmt->bindValue(7, $p->getId());
-            print_r($p->getQtdProd());
+            $stmt->bindValue(7, $p->getUsuarioId());
+            
             $stmt->execute();
             header('location: index.php');
         }
 
         public function listarProduto(){
             $sql = "SELECT * FROM produto";
+            
             $stmt = Db::ConexaoDb()->prepare($sql);
 
             $stmt->execute();
@@ -32,26 +33,31 @@
             endif;
 
         }
+
         function atualizarProduto(){
-            $sql = "UPDATE produto SET nomeProduto = ?, tipoProduto = ?, descricaoProduto = ?, IPI = ?, COFINS = ?, valorSemImpostos = ?, valorComImpostos =?, quantidade WHERE idUsuario = ?";
+            $sql = "UPDATE produto SET nomeProduto = ?, tipoProduto = ?, descricaoProduto = ?, IPI = ?, COFINS = ?, valorSemImpostos = ?, quantidade = ? where idproduto = ?";
 
             $stmt = Db::ConexaoDb()->prepare($sql);
-            $stmt->bindValue(1, $p->get());
-            $stmt->bindValue(2, $p->get());
-            $stmt->bindValue(3, $p->get());
-            $stmt->bindValue(4, $p->get());
-            $stmt->bindValue(5, $p->get());
-            $stmt->bindValue(6, $p->get());
-            $stmt->bindValue(7, $p->get());
-            $stmt->bindValue(1, $p->get());
-            $stmt->bindValue(1, $p->get());
+            $stmt->bindValue(1, $p->getNomeProd());
+            $stmt->bindValue(2, $p->getTipoProd());
+            $stmt->bindValue(3, $p->getDescProd());
+            $stmt->bindValue(4, $p->getIPI());
+            $stmt->bindValue(5, $p->getCOFINS());
+            $stmt->bindValue(6, $p->getVlImpostos());
+            $stmt->bindValue(6, $p->getQtdProd());
+            $stmt->bindValue(7, $p->getUsuarioId());
+
             $stmt->execute();
         }
-        function excluirProduto($id){
-            $sql = "DELETE FROM produto where idProduto = ?";
+        function excluirProduto($p){
+            $sql = "DELETE FROM produto where idproduto = ? AND usuario_idusuario = ?";
 
             $stmt = Db::ConexaoDb()->prepare($sql);
-            $stmt->bindValue(1, getId());
+            $stmt->bindValue(1, $p->getProdId());
+            $stmt->bindValue(2, $p->getUsuarioId());
+            
+            $stmt->execute();
+            header('location: visualizarProd.php');
         }
 
     }
