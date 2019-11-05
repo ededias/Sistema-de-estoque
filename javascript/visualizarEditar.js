@@ -4,7 +4,7 @@ $(document).ready(() =>{
     var dados = $(this).serialize();
     $.ajax({
         type: "method",
-        url: "App/controleProdutos/editar.class.php",
+        url: "App/controleProdutos/codificacaoJsonProduto.php",
         data: dados,
         dataType: "json",
         success: function (response) {

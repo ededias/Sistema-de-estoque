@@ -1,17 +1,10 @@
 <?php
     session_start();
-
     require_once('vendor/autoload.php');
     $validar = new ValidaUsuario();
-    $a = 1;
     if(!isset($_SESSION['nome'])){
       header('location: login.php');
     }
-    require_once('vendor/autoload.php');
-    $listarProd = new ConsultaProd();
-    $visualizar = new VisualizacaoProd();
-    $listaProduto = $listarProd->listarProduto($a);
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,7 +22,22 @@
     
   </head>
   <body>
-    <h1>Vizualizar produtos</h1>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="collapse navbar-collapse">
+                <a href="index.php">
+                <img src="img/images.png">
+                </a>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visualizarProd.php">Visualizar produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastroUsuario.php">Cadastro usuario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visualizarUsuarios.php">Visualizar usuarios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sair.php">Sair</a></li>
+                    <li class="nav-item"><label class="nav-link">Bem vindo <?php echo $_SESSION['nome'] ?></label></li>
+                </ul>      
+            </nav>
+        </header>
     
     <div id="tabela">
         <table class="table table-hover">
@@ -49,14 +57,12 @@
             </tbody>
         </table>
     </div>
-    <!-- Botão para acionar modal -->
-    <a href="index.php">retornar a ao cadastro</a>
     <!-- modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Nova mensagem</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Editar produto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -103,7 +109,7 @@
     
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
