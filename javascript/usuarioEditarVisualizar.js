@@ -38,13 +38,16 @@ $(document).ready(() =>{
                 let requisicaoJson = response;
                 modal.find('.modal-title').text('Nova mensagem para');
                 
-                modal.find('#nomeProd').val(requisicaoJson[recipient].nome);
-                modal.find('#tipoProd').val(requisicaoJson[recipientProd].idade);
-                modal.find('#descricaoProd').val(requisicaoJson[recipient].tipoUsuario);
-                modal.find('#IPI').val(requisicaoJson[recipientProd].loginUsuario);
-                modal.find('#COFINS').val(requisicaoJson[recipient].funcao);
-                modal.find('#valorSemImposto').val(requisicaoJson[recipient].CPF);
+                modal.find('#nome').val(requisicaoJson[recipient].nome);
+                modal.find('#idade').val(requisicaoJson[recipientProd].idade);
+                modal.find('#tipo').val(requisicaoJson[recipient].tipoUsuario);
+                modal.find('#login').val(requisicaoJson[recipientProd].loginUsuario);
+                modal.find('#funcao').val(requisicaoJson[recipient].funcao);
+                modal.find('#CPF').val(requisicaoJson[recipient].CPF);
+                modal.find('#senha').val(requisicaoJson[recipient].senhaUsuario);
                 modal.find('#quantidade').val(requisicaoJson[recipient].funcao);
+                modal.find('#sexo').val(requisicaoJson[recipient].sexo);
+                modal.find('#idusuario').val(requisicaoJson[recipient].idusuario);
               })
             
         } 

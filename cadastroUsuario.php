@@ -16,27 +16,40 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+    <style>  
+        body {
+            background: rgb(242,242,242);
+        }
+    </style>
     </head>
     <body> 
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="collapse navbar-collapse">
-                <a href="index.php">
-                <img src="img/images.png">
-                </a>
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="visualizarProd.php">Visualizar produtos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cadastroUsuario.php">Cadastro usuario</a></li>
-                    <li class="nav-item"><a class="nav-link" href="visualizarUsuarios.php">Visualizar usuarios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sair.php">Sair</a></li>
-                    <li class="nav-item"><label class="nav-link">Bem vindo <?php echo $_SESSION['nome'] ?></label></li>
-                </ul>      
+        <header class="pt-3">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse">
+                    <div class="pl-3">
+                        <a href="index.php">
+                        <img src="img/logoCabecalho.png">
+                        </a>
+                    </div>
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="index.php">Cadastro de produto</a></li>
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="visualizarProd.php">Visualizar produtos</a></li>
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="cadastroUsuario.php">Cadastrar usuário</a></li>
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="visualizarUsuarios.php">Visualizar usuários</a></li>
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="sair.php">Sair</a></li>
+                        <li class="nav-item text-uppercase font-weight-bold">
+                            <label class="nav-link">Bem vindo <?php echo $_SESSION['nome'] ?></label>
+                        </li>
+                    </ul>      
+                </div>
             </nav>
         </header>
         <section class="conteiner">
-            <div class="form" >
-                <form class="mx-auto row col" method="post" action="enviarParametrosClasses.php">
+            <div class="mx-auto col-6">
+                <h1 class="mx-auto">Cadastro de usuário</h1>
+            </div>
+            <div class="form mt-5" id="cadastroUsuario" >
+                <form class="mx-auto row col" method="post" action="salvarBancoUsuario.php">
                     <div class="col-6">
                         <label>Nome:</label>
                         <input class="form-control" type="text" name="nome">
@@ -72,7 +85,7 @@
                     </div>
                     <div class="col-6">
                         <label>Senha:</label>
-                        <input class="form-control" type="text" name="senha">
+                        <input class="form-control" type="password" name="senha">
                     </div>
                     
                     <div class="col-6">
@@ -80,56 +93,45 @@
                         <input class="form-control" type="text" name="funcao">
                     </div>
                     <div class="w-100 d-none d-md-block"></div>
-                    <div class="col mt-3">
+                    <div class="col-md-5 mx-auto mt-3">
                         <input class="form-control" type="submit" value="Enviar">
                     </div>
                 </form>
             </div>
         </section>
-        <footer id="myFooter">
-            <div class="container">
+        <footer class="page-footer" style="background: rgb(209,209,209)">
+            <div class="conteiner">
                 <div class="row">
-                    <div class="col-sm-3">
-                        <h2 class="logo"><a href="https://programadorviking.com.br/"> LOGO </a></h2>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>Inicio</h5>
-                        <ul>
-                            <li><a href="https://programadorviking.com.br/">Home</a></li>
-                            <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                            <li><a href="https://programadorviking.com.br/">Downloads</a></li>
+                <div class="col-4 pt-5 pl-5">
+                    <a>
+                    <img src="img/logoRodape.png">
+                    </a>
+                </div>
+                <div class="col-3 pt-5">
+                    <h5>SOBRE NÓS</h5>
+                    <div class="text-justify">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
+                </div>
+                <div class="col-3 pt-5 pl-5 ml-5">
+                    <h5>LINKS</h5>
+                    <div class="text-justify">
+                    <nav class="nav nav-navbar flex-column navbar-expands-lg navbar-light">
+                        <ul class="navbar-nav">
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="index.php">Inicio</a></li>
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="visualizarProd.php">Visualizar produtos</a></li>
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="cadastroUsuario.php">Cadastrar usuário</a></li>
+                        <li class="nav-item text-uppercase font-weight-bold"><a class="nav-link" href="visualizarUsuarios.php">Visualizar usuários</a></li>
                         </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>Sobre-nós</h5>
-                        <ul>
-                            <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                            <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                            <li><a href="https://programadorviking.com.br/">Blog</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>Suporte</h5>
-                        <ul>
-                            <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                            <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                            <li><a href="https://programadorviking.com.br/">Chat</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="social-networks">
-                            <a href="https://programadorviking.com.br/" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="https://programadorviking.com.br/" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="https://programadorviking.com.br/" class="instagram"><i class="fa fa-instagram"></i></a>
-                        </div>
-                        <a href="https://programadorviking.com.br/">
-                            <button type="button" class="btn btn-default">Contato</button>
-                        </a>
+                    </nav>
                     </div>
                 </div>
+                </div>
             </div>
-            <div class="footer-copyright">
-                <p>© 2019 Copyright - Programador Viking</p>
+            <div class="footer-copyright font-small text-center p-5" style="background: rgb(180,180,180);">
+                <p>&copy Desenvolvido por Edenilson Dias</p>
             </div>
         </footer>
         <!-- JavaScript (Opcional) -->
@@ -138,10 +140,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="javascript/jquery.mask.js"></script>
-        <script>
-            $("#cpf").mask('000.000.000-00')
-        </script>
-        
+        <script src="javascript/mascara.js"></script>
     </body>
 </html>
 

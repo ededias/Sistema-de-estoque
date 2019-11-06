@@ -17,8 +17,8 @@ $(document).ready(() =>{
                         <td> ${value.descricaoProduto}</td>
                         <th> ${value.IPI}</th>
                         <td> ${value.COFINS}</td>
-                        <td> ${value.valorSemImposto}</td>
-                        <td> ${value.valorComImposto}</td>
+                        <td> ${value.valorSemImpostos}</td>
+                        <td> ${value.valorComImpostos}</td>
                         <td> ${value.quantidade}</td>
                         <td><button type="button" class="btn btn-primary teste" data-toggle="modal" data-target="#exampleModal" name="editarProd" data-whatever="${key}">Editar</button></td>
                         <td>
@@ -47,10 +47,11 @@ $(document).ready(() =>{
                 modal.find('#descricaoProd').val(requisicaoJson[recipient].descricaoProduto);
                 modal.find('#IPI').val(requisicaoJson[recipientProd].IPI);
                 modal.find('#COFINS').val(requisicaoJson[recipient].COFINS);
-                modal.find('#valorSemImposto').val(requisicaoJson[recipientProd].valorSemImposto);
+                modal.find('#valorSemImposto').val(requisicaoJson[recipientProd].valorSemImpostos);
                 modal.find('#quantidade').val(requisicaoJson[recipientProd].quantidade);
-              })
-            
+                modal.find('#idproduto').val(requisicaoJson[recipientProd].idproduto);
+                modal.find('#usuarioid').val(requisicaoJson[recipientProd].usuario_idusuario);
+            })
         } 
     });
 

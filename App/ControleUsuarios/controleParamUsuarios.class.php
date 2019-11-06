@@ -32,7 +32,6 @@
             $usuario->setTipoUsuario($tipoUsuario);
             $usuario->setIdade($idade);
             $usuario->setSexo($sexo);
-
             
             $cadUsuario->cadUsuario($usuario);
     
@@ -48,7 +47,6 @@
             $usuario->setTipoUsuario($tipoUsuario);
             $usuario->setIdade($idade);
             $usuario->setSexo($sexo);
-
             
             $cadUsuario->cadUsuario($usuario);
         }

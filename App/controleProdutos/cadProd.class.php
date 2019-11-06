@@ -34,8 +34,8 @@
 
         }
 
-        function atualizarProduto(){
-            $sql = "UPDATE produto SET nomeProduto = ?, tipoProduto = ?, descricaoProduto = ?, IPI = ?, COFINS = ?, valorSemImpostos = ?, quantidade = ? where idproduto = ?";
+        function atualizarProduto($p){
+            $sql = "UPDATE produto SET nomeProduto = ?, tipoProduto = ?, descricaoProduto = ?, IPI = ?, COFINS = ?, valorSemImpostos = ?, quantidade = ? where idproduto = ? AND usuario_idusuario = ?";
 
             $stmt = Db::ConexaoDb()->prepare($sql);
             $stmt->bindValue(1, $p->getNomeProd());
@@ -44,10 +44,12 @@
             $stmt->bindValue(4, $p->getIPI());
             $stmt->bindValue(5, $p->getCOFINS());
             $stmt->bindValue(6, $p->getVlImpostos());
-            $stmt->bindValue(6, $p->getQtdProd());
-            $stmt->bindValue(7, $p->getUsuarioId());
+            $stmt->bindValue(7, $p->getQtdProd());
+            $stmt->bindValue(8, $p->getProdId());
+            $stmt->bindValue(9, $p->getUsuarioId());
 
             $stmt->execute();
+            header('location: visualizarProd.php');
         }
         function excluirProduto($p){
             $sql = "DELETE FROM produto where idproduto = ? AND usuario_idusuario = ?";
