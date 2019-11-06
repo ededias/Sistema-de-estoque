@@ -1,7 +1,7 @@
 <?php
 
     require_once('vendor/autoload.php');
-    
+
     $cad = new Usuario();
 
     $cad->setNome($_POST['nome']);
@@ -15,6 +15,5 @@
 
     print_r($cad);
     $usuario = new ConsultaUsuario();
-    $usuario->cadUsuario($cad)
-
+    $usuario->cadUsuario($cad);
 ?>

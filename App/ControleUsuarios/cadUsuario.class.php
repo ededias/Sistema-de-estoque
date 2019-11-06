@@ -48,7 +48,7 @@
             $stmt->bindValue(9, $p->getId());
 
             $stmt->execute();
-            // header('location: visualizarUsuarios.php');
+            header('location: visualizarUsuarios.php');
         }
 
         function excluirUsuario($id){

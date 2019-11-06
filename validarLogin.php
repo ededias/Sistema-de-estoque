@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="css/animacao.css">
 <div class="loader" id="animacao">
     <div class="inner one"></div>
@@ -17,7 +16,5 @@
     $usuario->setSenha($_POST['senha']);
     $validar->validar($usuario);
     $i = 0;
-    
+
 ?>
-
-

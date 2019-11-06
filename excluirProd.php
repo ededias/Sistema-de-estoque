@@ -6,6 +6,3 @@
     $produto->setProdId($id);
     $produto->setUsuarioId($_POST['idusuario']);
     $excluirProd->excluirProduto($produto);
-
-
-?>

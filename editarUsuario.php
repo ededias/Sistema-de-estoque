@@ -1,7 +1,7 @@
 <?php
 
     require_once('vendor/autoload.php');
-    
+
     $cad = new Usuario();
 
     $cad->setNome($_POST['nome']);
@@ -13,12 +13,6 @@
     $cad->setFuncao($_POST['funcao']);
     $cad->setSexo($_POST['sexo']);
     $cad->setId($_POST['idusuario']);
-    
-    echo "<pre>"; 
-    print_r($cad);
 
     $usuario = new ConsultaUsuario();
-    $usuario->atualizarUsuario($cad)
-
-
-?>
+    $usuario->atualizarUsuario($cad);

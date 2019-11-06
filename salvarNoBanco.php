@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     require_once('vendor/autoload.php');
 
@@ -14,7 +14,3 @@
     $consultaProd = new ConsultaProd();
 
     $consultaProd->cadProd($produto);
-
-
-
-?>

@@ -19,8 +19,8 @@ $(document).ready(() =>{
                         <td> ${value.funcao}</td>
                         <td><button type="button" class="btn btn-primary teste" data-toggle="modal" data-target="#exampleModal" name="editarProd" data-whatever="${key}">Editar</button></td>
                         <td>
-                            <form method="post" action="excluirProd.php">
-                                <input type="hidden" name="produto" value="${value.idusuario}">
+                            <form method="post" action="excluir.php">
+                                <input type="hidden" name="idusuario" value="${value.idusuario}">
                                 <button type="submit" class="btn btn-danger">Excluir</button>
                             </form>
                         </td>
